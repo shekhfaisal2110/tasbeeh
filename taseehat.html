@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasbeeh Counter</title>
+    <link rel="stylesheet" href="./css/taseehat.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/button-container.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Tasbeeh
+            <img src="./img/logo.png" alt="logo" id="logo">
+        </h1>
+        <button id="addTasbeeh"><i class="fa-solid fa-plus"></i></button>
+    </header>
+    <!-- Message Box for missing Tasbeeh alert -->
+    <div id="refresh-message-box" class="hidden">Tasbeeh data is missing. Please refresh the page.</div>
+    <div class="button-container">
+        <button id="recommendedTasbeeh">
+            <i class="fa-solid fa-star"></i> Recommended
+        </button>
+        <button id="asmaUlHusna">
+            <i class="fa-solid fa-mosque"></i> 99 Names of Allah
+        </button>
+    </div>
+    <div id="message-box" style="display: none; padding: 10px; background-color: #ffcc00; color: #000; text-align: center; border-radius: 5px; margin-top: 10px;"></div>
+    <div id="recommendedModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRecommendedModal">&times;</span>
+            <h2>Select a Recommended Tasbeeh</h2>
+            <ul id="recommendedTasbeehList">
+                <!-- Tasbeeh options will be loaded here dynamically -->
+            </ul>
+            <label for="tasbeehCount">Set Count:</label>
+            <input type="number" id="recommendedTasbeehCount" placeholder="Enter count" min="1">
+            <button id="saveRecommendedTasbeeh">Add to List</button>
+        </div>
+    </div>
+    <!-- Modal for 99 Names of Allah Tasbeeh -->
+    <div id="asmaUlHusnaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAsmaUlHusnaModal">&times;</span>
+            <h2>Select a Name of Allah</h2>
+            <ul id="asmaUlHusnaList">
+                <!-- 99 Names will be loaded dynamically -->
+            </ul>
+            <label for="tasbeehCount">Set Count:</label>
+            <input type="number" id="asmaUlHusnaCount" placeholder="Enter count" min="1">
+            <button id="saveAsmaUlHusna">Add to List</button>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Add Tasbeeh</h2>
+            <label for="tasbeehName">Tasbeeh Name:</label>
+            <input type="text" id="tasbeehName" placeholder="Enter Tasbeeh Name">
+            <label for="tasbeehCount">Target Count:</label>
+            <input type="number" id="tasbeehCount" placeholder="Enter count (e.g., 100)">
+            <button id="saveTasbeeh">Save</button>
+        </div>
+    </div>
+    <main>
+        <div id="tasbeeh-list" class="tasbeeh-container"></div>
+    </main>
+    <nav>
+        <a href="index.html" class="nav-item"><i class="fa-solid fa-home"></i> Home</a>
+        <a href="taseehat.html" class="nav-item"><i class="fa-solid fa-bars"></i> Tasbeeh</a>
+    </nav>
+    <script src="./js/taseehat.js"></script>
+    <script src="./js/99NamesOfAllah.js"></script>
+    <script src="./js/recommed.js"></script>
+</body>
+</html>

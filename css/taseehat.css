@@ -1,0 +1,241 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+/* Header Styling */
+header {
+    background: #4db6ac;
+    color: white;
+    padding: 10px;
+    font-size: 1.5vw; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-top: -2vw;
+}
+/* Header Title */
+header h1 {
+    margin: 0;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+/* Logo Styling */
+#logo {
+    height: 6vw;
+    width: auto; 
+}
+/* Add Tasbeeh Button */
+#addTasbeeh {
+    background: white;
+    color: #218838;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vw;
+    height: 4vw;
+}
+#addTasbeeh:hover {
+    background-color: #218838;
+    color: white;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+/* Show Modal */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+/* Animate the modal opening */
+.modal.show .modal-content {
+    transform: scale(1);
+}
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+.close:hover {
+    color: red;
+}
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Save Button */
+#saveTasbeeh {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+#saveTasbeeh:hover {
+    background-color: #218838;
+}
+/* Main Content */
+main {
+    padding: 20px;
+}
+#tasbeehList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tasbeeh-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tasbeeh-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+/* Tasbeeh Header */
+.tasbeeh-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4db6ac;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+.tasbeeh-item h3 {
+    margin: 0;
+    color: #388e3c;
+    font-size: 20px;
+}
+.tasbeeh-buttons {
+    display: flex;
+    gap: 8px;
+}
+.edit-btn, .delete-btn {
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+.edit-btn:hover {
+    background: #ffcc00;
+    color: white;
+}
+.delete-btn:hover {
+    background: #f44336;
+    color: white;
+}
+/* Transliteration & Count Display */
+.transliteration {
+    font-style: italic;
+    font-size: 16px;
+    color: #444;
+    margin: 8px 0;
+}
+.count-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #388e3c;
+}
+.count {
+    font-size: 20px;
+    font-weight: bold;
+}
+.goal {
+    font-size: 16px;
+    color: #666;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    main{
+        padding: 2vw;
+    }
+    .tasbeeh-item {
+        font-size: 8vw;
+    }
+    .tasbeeh-header {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .edit-btn, .delete-btn {
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+    }
+}
+/* Styling for the refresh message box */
+#refresh-message-box {
+    display: none;
+    padding: 15px;
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.hidden {
+    display: none;
+}
